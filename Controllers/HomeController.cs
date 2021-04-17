@@ -23,6 +23,11 @@ namespace HatSelling.Controllers
             return View();
         }
 
+        public IActionResult Hats()
+        {
+            return View();
+        }
+
         public IActionResult Privacy()
         {
             return View();

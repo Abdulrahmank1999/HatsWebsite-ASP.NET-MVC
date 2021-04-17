@@ -77,3 +77,4 @@ A:\Project\Hats-MVC\HatSelling\HatSelling\obj\Debug\netcoreapp3.1\HatSelling.csp
 A:\Project\Hats-MVC\HatSelling\HatSelling\obj\Debug\netcoreapp3.1\HatSelling.dll
 A:\Project\Hats-MVC\HatSelling\HatSelling\obj\Debug\netcoreapp3.1\HatSelling.pdb
 A:\Project\Hats-MVC\HatSelling\HatSelling\obj\Debug\netcoreapp3.1\HatSelling.genruntimeconfig.cache
+A:\Project\Hats-MVC\HatSelling\HatSelling\obj\Debug\netcoreapp3.1\Razor\Views\Home\Hats.cshtml.g.cs
