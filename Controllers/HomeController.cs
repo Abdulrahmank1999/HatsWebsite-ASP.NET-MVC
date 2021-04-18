@@ -1,4 +1,5 @@
 ﻿using HatSelling.Models;
+using HatSelling.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -11,11 +12,11 @@ namespace HatSelling.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly IHatService _Hat;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(IHatService Hat)
         {
-            _logger = logger;
+            _Hat = Hat ;
         }
 
         public IActionResult Index()
@@ -25,7 +26,15 @@ namespace HatSelling.Controllers
 
         public IActionResult Hats()
         {
-            return View();
+            return View(_Hat.GetHats());
+        }
+
+        
+        public IActionResult HatView(int id)
+        {
+            Hat HatView = _Hat.FindHat(id);
+
+            return View(HatView);
         }
 
         public IActionResult Privacy()
@@ -33,10 +42,6 @@ namespace HatSelling.Controllers
             return View();
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
+   
     }
 }

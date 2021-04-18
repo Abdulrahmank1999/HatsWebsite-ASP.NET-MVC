@@ -1,4 +1,5 @@
 using HatSelling.Models;
+using HatSelling.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -27,7 +28,9 @@ namespace HatSelling
         {
             services.AddDbContext<HatsDbContext>
                 (options => options.UseSqlServer(Configuration.GetConnectionString("Default")));
+            services.AddScoped<IHatService, HatService>();
             services.AddControllersWithViews();
+            services.AddRazorPages();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

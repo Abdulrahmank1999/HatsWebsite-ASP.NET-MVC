@@ -1,0 +1,22 @@
+﻿@model List<HatSelling.Models.Hat>
+
+<div class="container-fluid">
+    <div class="row mt-5">
+        @foreach (var item in Model)
+        {
+            <div class="col-lg-3 col-md-6 col-sm-12 mb-5">
+
+                <div class="card" style="width: 18rem;">
+                    <img src="~/images/static/Hat.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">@Html.DisplayFor(m => item.HatName)</h5>
+                        <p class="card-text">@Html.DisplayFor(m => item.Price)</p>
+                        <a class="btn btn-primary" asp-action="HatView" asp-route-id="@item.HatId">View</a>
+                    </div>
+                </div>
+
+            </div>
+        }
+
+    </div>
+</div>
